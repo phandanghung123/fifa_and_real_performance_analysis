@@ -77,11 +77,11 @@ WHERE VER = 'Normal Controlled'
 GROUP BY team 
 ORDER BY Average_VFM_Attacking_Team DESC;
 
---Top goals team and top goals per 90 in VER Normal Controlled
+--Top goals team (fix the goals in integer)  and top goals per 90 in VER Normal Controlled
 
 SELECT
     team,
-    SUM(goals) as total_score,
+   	Round(SUM(goals),1)*10 as total_score,
     ROUND(
         CASE 
             WHEN SUM(minutes_played) <>0 THEN
