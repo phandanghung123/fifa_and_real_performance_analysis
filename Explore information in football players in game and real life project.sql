@@ -124,9 +124,21 @@ SELECT
         END, 5
     ) AS avg_goals_per_90
 FROM dbo.process_data AS a
-LEFT JOIN dbo.fifa_players AS b
-    ON a.Name = b.full_name
+LEFT JOIN dbo.process_data AS b 
+    ON a.Name LIKE '%' + b.name + '%' 
+    OR b.name LIKE '%' + a.Name + '%'
 WHERE VER = 'Normal Controlled'
 	AND b.nationality IS NOT NULL 
 GROUP BY b.nationality, a.Name
 ORDER BY avg_goals_per_90 DESC;
+
+---Overall football inforamation we got
+
+SELECT
+    COUNT(DISTINCT b.team) AS Total_teams,
+    COUNT(DISTINCT a.nationality) AS Total_nations,
+    COUNT(b.Name) AS Total_players
+FROM dbo.fifa_players AS a
+LEFT JOIN dbo.process_data AS b 
+    ON a.Name LIKE '%' + b.name + '%' 
+    OR b.name LIKE '%' + a.Name + '%'
