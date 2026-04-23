@@ -12,3 +12,4 @@
 
 ### 3. Data Processing Note
 Both datasets were combined using a **Left Join** in SQL Server based on the player names.
+All analyses apply to the ‘Normal Controlled’ version of FIFA 23.
