@@ -14,5 +14,5 @@
 * Both datasets were combined using a **Left Join** in SQL Server based on the player names.
 * All analyses apply to the ‘Normal Controlled’ version of FIFA 23.
 ## 📊 Dashboard
-👉 View interactive dashboard: https://public.tableau.com/views/your-dashboard
+👉 View interactive dashboard: [https://public.tableau.com/app/profile/h.ng.phan4706/viz/FootballPlayersDashboard2023dataset/Dashboard1]
 
